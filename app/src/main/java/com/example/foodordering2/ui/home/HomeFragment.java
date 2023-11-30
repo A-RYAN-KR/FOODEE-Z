@@ -19,16 +19,17 @@ import com.example.foodordering2.databinding.FragmentHomeBinding;
 import com.example.foodordering2.models.HomeHorModel;
 import com.example.foodordering2.models.HomeVerModel;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment implements UpdateVerticalRec {
 
     RecyclerView homeHorizontalRec, homeVerticalRec;
-    List<HomeHorModel> homeHorModelList;
+    ArrayList<HomeHorModel> homeHorModelList;
     HomeHorAdapter homeHorAdapter;
 
-    List<HomeVerModel> homeVerModelList;
+    ArrayList<HomeVerModel> homeVerModelList;
     HomeVerAdapter homeVerAdapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -37,6 +38,8 @@ public class HomeFragment extends Fragment implements UpdateVerticalRec {
 
         homeHorizontalRec = root.findViewById(R.id.home_hor_rec);
         homeVerticalRec = root.findViewById(R.id.home_ver_rec);
+
+
         homeHorModelList = new ArrayList<>();
 
         homeHorModelList.add(new HomeHorModel(R.drawable.copy_of_pizza, "Pizza"));
@@ -45,7 +48,7 @@ public class HomeFragment extends Fragment implements UpdateVerticalRec {
         homeHorModelList.add(new HomeHorModel(R.drawable.copy_of_ice_cream, "Ice Cream"));
         homeHorModelList.add(new HomeHorModel(R.drawable.copy_of_sandwich, "Sandwich"));
 
-        homeHorAdapter = new HomeHorAdapter(this, (FragmentActivity) getActivity(), homeHorModelList);
+        homeHorAdapter = new HomeHorAdapter(this,getActivity(),homeHorModelList);
         homeHorizontalRec.setAdapter(homeHorAdapter);
         homeHorizontalRec.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
         homeHorizontalRec.setHasFixedSize(true);
@@ -53,26 +56,23 @@ public class HomeFragment extends Fragment implements UpdateVerticalRec {
 
         homeVerModelList = new ArrayList<>();
 
-        homeVerModelList.add(new HomeVerModel(R.drawable.copy_of_pizza1, "Pizza", "10:00 - 23:00", "4.9", "Min - $34"));
-        homeVerModelList.add(new HomeVerModel(R.drawable.copy_of_pizza2, "Pizza", "10:00 - 23:00", "4.9", "Min - $34"));
-        homeVerModelList.add(new HomeVerModel(R.drawable.copy_of_pizza3, "Pizza", "10:00 - 23:00", "4.9", "Min - $34"));
+//        homeVerModelList.add(new HomeVerModel(R.drawable.copy_of_pizza1, "Pizza", "10:00 - 23:00", "4.9", "Min - $34"));
+//        homeVerModelList.add(new HomeVerModel(R.drawable.copy_of_pizza2, "Pizza", "10:00 - 23:00", "4.9", "Min - $34"));
+//        homeVerModelList.add(new HomeVerModel(R.drawable.copy_of_pizza3, "Pizza", "10:00 - 23:00", "4.9", "Min - $34"));
 
         homeVerAdapter = new HomeVerAdapter(getActivity(), homeVerModelList);
         homeVerticalRec.setAdapter(homeVerAdapter);
         homeVerticalRec.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.VERTICAL, false));
-        homeVerticalRec.setHasFixedSize(true);
-        homeVerticalRec.setNestedScrollingEnabled(false);
 
         return root;
     }
 
-    @Override
-    public void callBack(int position, List<HomeVerModel> homeVerModels) {
-        // Implement the callback logic here
-    }
 
     @Override
     public void callBack(int position, ArrayList<HomeVerModel> list) {
 
+        homeVerAdapter = new HomeVerAdapter(getContext(), list);
+        homeVerAdapter.notifyDataSetChanged();
+        homeVerticalRec.setAdapter(homeVerAdapter);
     }
 }

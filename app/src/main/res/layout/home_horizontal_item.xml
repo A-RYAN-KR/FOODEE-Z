@@ -29,6 +29,7 @@
             android:textAlignment="center"
             android:layout_marginTop="10dp"
             android:text="Pizza"
+            android:layout_gravity="center"
             android:textColor="@color/white"
             android:textSize="15sp"/>
     </LinearLayout>
