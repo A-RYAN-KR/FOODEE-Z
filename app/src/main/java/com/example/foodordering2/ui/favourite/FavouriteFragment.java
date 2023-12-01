@@ -1,4 +1,4 @@
-package com.example.foodordering2.ui.slideshow;
+package com.example.foodordering2.ui.favourite;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
