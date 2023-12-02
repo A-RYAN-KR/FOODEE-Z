@@ -23,6 +23,7 @@
         app:title="Daily Meals">
 
         <ImageView
+            android:id="@+id/detailed_img"
             android:layout_width="match_parent"
             android:layout_height="240dp"
             android:scaleType="centerCrop"
