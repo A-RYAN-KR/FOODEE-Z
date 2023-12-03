@@ -41,13 +41,14 @@ public class FeaturedVerAdapter extends RecyclerView.Adapter<FeaturedVerAdapter.
 
     @Override
     public int getItemCount() {
-        return 0;
+        return list.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         ImageView imageView;
         TextView name, description, rating, timing;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
