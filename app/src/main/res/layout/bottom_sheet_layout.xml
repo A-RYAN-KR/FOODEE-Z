@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Order Now"
+        android:layout_marginBottom="10dp"
         android:textColor="@color/purple_500"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -26,10 +27,11 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
-        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -38,7 +40,7 @@
         app:layout_constraintVertical_bias="0.073">
 
         <com.makeramen.roundedimageview.RoundedImageView
-            android:id="@+id/detailed_img"
+            android:id="@+id/bottom_img"
             android:layout_width="130dp"
             android:layout_height="110dp"
             android:layout_margin="10dp"
@@ -53,13 +55,13 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/detailed_name"
+                android:id="@+id/bottom_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:singleLine="true"
                 android:text="Name"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -71,7 +73,7 @@
                 android:maxLines="2"
                 android:singleLine="true"
                 android:text="Description"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -88,10 +90,11 @@
 
 
                 <TextView
-                    android:id="@+id/detailed_rating"
+                    android:id="@+id/bottom_rating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="5.0"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
 
                 <ImageView
@@ -103,11 +106,12 @@
 
 
                 <TextView
-                    android:id="@+id/detailed_timing"
+                    android:id="@+id/bottom_timing"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
                     android:text="10:00 - 7:00"
+                    android:textColor="@color/white"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -121,28 +125,30 @@
                     android:layout_height="20dp"
                     android:src="@drawable/copy_of_dollarsymbol"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/detailed_price"
-                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintEnd_toStartOf="@+id/add_to_cart"
+                    app:layout_constraintHorizontal_bias="0.009"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0"
                     app:tint="@color/purple_500" />
 
                 <TextView
-                    android:id="@+id/detailed_price"
+                    android:id="@+id/bottom_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="120.0"
+                    android:textColor="@color/white"
                     android:textStyle="bold"
+                    android:layout_marginLeft="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/button2"
-                    app:layout_constraintHorizontal_bias="0.159"
+                    app:layout_constraintEnd_toStartOf="@+id/add_to_cart"
+                    app:layout_constraintHorizontal_bias="0.222"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/add_to_cart"
                     android:layout_width="97dp"
                     android:layout_height="wrap_content"
                     android:text="Add To Cart"
@@ -151,7 +157,7 @@
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.668"
+                    app:layout_constraintHorizontal_bias="0.788"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0" />
