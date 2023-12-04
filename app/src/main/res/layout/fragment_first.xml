@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".fragments.FirstFragment"
     android:layout_margin="10dp"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/featured_hor_rec"
