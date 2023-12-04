@@ -43,6 +43,7 @@ public class FirstFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_first, container, false);
 
         ///////////////////////////////Featured Hor RecyclerView
+
         recyclerView = view.findViewById(R.id.featured_hor_rec);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false));
         featuredModelList = new ArrayList<>();
@@ -55,6 +56,7 @@ public class FirstFragment extends Fragment {
         recyclerView.setAdapter(featuredAdapter);
 
         ///////////////////////////////Featured Ver RecyclerView
+
         recyclerView2 = view.findViewById(R.id.featured_ver_rec);
         recyclerView2.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false));
         featuredVerModelsList = new ArrayList<>();
