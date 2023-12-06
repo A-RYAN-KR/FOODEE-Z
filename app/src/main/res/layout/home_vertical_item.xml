@@ -20,6 +20,7 @@
             android:layout_height="250dp"
             android:scaleType="center"
             android:src="@drawable/copy_of_dinner"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"

@@ -2,7 +2,6 @@ package com.example.foodordering2.adapters;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +24,6 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
     Activity activity;
     ArrayList<HomeHorModel> list;
     boolean check = true;
-    boolean select = true;
     int row_index = -1;
 
     public HomeHorAdapter(UpdateVerticalRec updateVerticalRec, Activity activity, ArrayList<HomeHorModel> list) {
@@ -42,7 +40,6 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
-
         holder.imageView.setImageResource(list.get(position).getImage());
         holder.name.setText(list.get(position).getName());
 
@@ -59,69 +56,48 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
                 row_index = position;
                 notifyDataSetChanged();
 
-                if (position == 0){
-
+                if (position == 0) {
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza1, "Pizza 1","10:00 - 23:00","4.9","Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza2, "Pizza 2","10:00 - 23:00","4.9","Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza3, "Pizza 3","10:00 - 23:00","4.9","Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza4, "Pizza 4","10:00 - 23:00","4.9","Min - $35"));
-
-                    updateVerticalRec.callBack(position,homeVerModels);
-
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza1, "Pizza 1", "10:00 - 23:00", "4.9", "Min - $35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza2, "Pizza 2", "10:00 - 23:00", "4.9", "Min - $35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza3, "Pizza 3", "10:00 - 23:00", "4.9", "Min - $35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza4, "Pizza 4", "10:00 - 23:00", "4.9", "Min - $35"));
+                    updateVerticalRec.callBack(position, homeVerModels);
                 } else if (position == 1) {
-
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger1, "Burger 1","10:00 - 23:00","4.9","Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger2, "Burger 2","10:00 - 23:00","4.9","Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger4, "Burger 3","10:00 - 23:00","4.9","Min - $35"));
-
-                    updateVerticalRec.callBack(position,homeVerModels);
-                }
-                else if (position == 2) {
-
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger1, "Burger 1", "10:00 - 23:00", "4.9", "Min - $35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger2, "Burger 2", "10:00 - 23:00", "4.9", "Min - $35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger4, "Burger 3", "10:00 - 23:00", "4.9", "Min - $35"));
+                    updateVerticalRec.callBack(position, homeVerModels);
+                } else if (position == 2) {
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries1, "Fries 1","10:00 - 23:00","4.9","Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries2, "Fries 2","10:00 - 23:00","4.9","Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries3, "Fries 3","10:00 - 23:00","4.9","Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries4, "Fries 4","10:00 - 23:00","4.9","Min - $35"));
-
-                    updateVerticalRec.callBack(position,homeVerModels);
-                }
-                else if (position == 3) {
-
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries1, "Fries 1", "10:00 - 23:00", "4.9", "Min - $35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries2, "Fries 2", "10:00 - 23:00", "4.9", "Min - $35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries3, "Fries 3", "10:00 - 23:00", "4.9", "Min - $35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries4, "Fries 4", "10:00 - 23:00", "4.9", "Min - $35"));
+                    updateVerticalRec.callBack(position, homeVerModels);
+                } else if (position == 3) {
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_icecream1, "Ice-cream 1","10:00 - 23:00","4.9","Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_icecream3, "Ice-cream 2","10:00 - 23:00","4.9","Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_icecream4, "Ice-cream 3","10:00 - 23:00","4.9","Min - $35"));
-
-                    updateVerticalRec.callBack(position,homeVerModels);
-                }
-                else if (position == 4) {
-
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_icecream1, "Ice-cream 1", "10:00 - 23:00", "4.9", "Min - $35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_icecream3, "Ice-cream 2", "10:00 - 23:00", "4.9", "Min - $35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_icecream4, "Ice-cream 3", "10:00 - 23:00", "4.9", "Min - $35"));
+                    updateVerticalRec.callBack(position, homeVerModels);
+                } else if (position == 4) {
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwich1, "Sandwich 1","10:00 - 23:00","4.9","Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwich2, "Sandwich 2","10:00 - 23:00","4.9","Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwich3, "Sandwich 3","10:00 - 23:00","4.9","Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwich4, "Sandwich 4","10:00 - 23:00","4.9","Min - $35"));
-
-                    updateVerticalRec.callBack(position,homeVerModels);
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwich1, "Sandwich 1", "10:00 - 23:00", "4.9", "Min - $35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwich2, "Sandwich 2", "10:00 - 23:00", "4.9", "Min - $35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwich3, "Sandwich 3", "10:00 - 23:00", "4.9", "Min - $35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwich4, "Sandwich 4", "10:00 - 23:00", "4.9", "Min - $35"));
+                    updateVerticalRec.callBack(position, homeVerModels);
                 }
             }
         });
 
-        if (select){
-            if (position == 0){
-                holder.cardView.setBackgroundResource(R.drawable.change_bg);
-            }
-        }
-        else {
-            if (row_index == position){
-                holder.cardView.setBackgroundResource(R.drawable.change_bg);
-            }
-            else {
-                holder.cardView.setBackgroundResource(R.drawable.default_bg);
-            }
+        // Change background color only for the clicked item
+        if (row_index == position) {
+            holder.cardView.setBackgroundResource(R.drawable.change_bg);
+        } else {
+            holder.cardView.setBackgroundResource(R.drawable.default_bg);
         }
     }
 
