@@ -45,10 +45,10 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
 
         if (check) {
             ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza1, "Pizza 1", "10:00 - 23:00", "4.9", "Min - $35"));
-            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza2, "Pizza 2", "10:00 - 23:00", "4.9", "Min - $35"));
-            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza3, "Pizza 3", "10:00 - 23:00", "4.9", "Min - $35"));
-            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza4, "Pizza 4", "10:00 - 23:00", "4.9", "Min - $35"));
+            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza1, "Aloo Paratha", "10:00 - 23:00", "4.9", "Min - $35"));
+            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza2, "Paneer Paratha", "10:00 - 23:00", "4.9", "Min - $35"));
+            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza3, "Palak Paratha", "10:00 - 23:00", "4.9", "Min - $35"));
+            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza4, "Rava Paratha", "10:00 - 23:00", "4.9", "Min - $35"));
             updateVerticalRec.callBack(position, homeVerModels);
             check = false;
         }
@@ -61,10 +61,10 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
 
                 if (position == 0) {
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza1, "Pizza 1", "10:00 - 23:00", "4.9", "Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza2, "Pizza 2", "10:00 - 23:00", "4.9", "Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza3, "Pizza 3", "10:00 - 23:00", "4.9", "Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza4, "Pizza 4", "10:00 - 23:00", "4.9", "Min - $35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza1, "Aloo Paratha", "10:00 - 23:00", "4.9", "Min - $35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza2, "Paneer Paratha", "10:00 - 23:00", "4.9", "Min - $35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza3, "Palak Paratha", "10:00 - 23:00", "4.9", "Min - $35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza4, "Rava Paratha", "10:00 - 23:00", "4.9", "Min - $35"));
                     updateVerticalRec.callBack(position, homeVerModels);
                 } else if (position == 1) {
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();

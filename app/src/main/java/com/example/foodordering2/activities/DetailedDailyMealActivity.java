@@ -21,6 +21,9 @@ public class DetailedDailyMealActivity extends AppCompatActivity {
     DetailedDailyAdapter dailyAdapter;
     ImageView imageView;
 
+    // Initialize the cartItems list
+    List<DetailedDailyModel> cartItems = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,24 +36,24 @@ public class DetailedDailyMealActivity extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         detailedDailyModelList = new ArrayList<>();
-        dailyAdapter = new DetailedDailyAdapter(detailedDailyModelList);
+
+        // Modify the adapter instantiation to pass both lists
+        dailyAdapter = new DetailedDailyAdapter(detailedDailyModelList, cartItems);
         recyclerView.setAdapter(dailyAdapter);
 
-        if (type != null && type.equalsIgnoreCase( "breakfast")){
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_fav1, "Breakfast","description","4.4","40","10 to 9"));
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_fav2, "Breakfast","description","4.4","40","10 to 9"));
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_fav3, "Breakfast","description","4.4","40","10 to 9"));
+        if (type != null && type.equalsIgnoreCase("breakfast")) {
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_fav1, "Breakfast", "description", "4.4", "40", "10 to 9"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_fav2, "Breakfast", "description", "4.4", "40", "10 to 9"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_fav3, "Breakfast", "description", "4.4", "40", "10 to 9"));
             dailyAdapter.notifyDataSetChanged();
         }
 
-        if (type != null && type.equalsIgnoreCase( "sweets")){
-
+        if (type != null && type.equalsIgnoreCase("sweets")) {
             imageView.setImageResource(R.drawable.copy_of_sweets);
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s1, "Sweet","description","4.4","40","10am to 9am"));
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s2, "Sweet","description","4.4","40","10am to 9am"));
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s4, "Sweet","description","4.4","40","10am to 9am"));
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_sweets, "Sweet","description","4.4","40","10am to 9am"));
-
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s1, "Sweet", "description", "4.4", "40", "10am to 9am"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s2, "Sweet", "description", "4.4", "40", "10am to 9am"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s4, "Sweet", "description", "4.4", "40", "10am to 9am"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_sweets, "Sweet", "description", "4.4", "40", "10am to 9am"));
             dailyAdapter.notifyDataSetChanged();
         }
     }

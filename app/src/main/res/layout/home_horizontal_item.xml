@@ -17,8 +17,8 @@
 
         <ImageView
             android:id="@+id/hor_img"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="75sp"
+            android:layout_height="70sp"
             android:layout_gravity="center"
             android:src="@drawable/copy_of_pizza" />
 
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:text="Pizza"
+            android:text="Paranthas"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="15sp" />

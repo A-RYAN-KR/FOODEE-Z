@@ -20,6 +20,7 @@ import java.util.List;
 
 public class HomeVerAdapter extends RecyclerView.Adapter<HomeVerAdapter.ViewHolder> {
 
+    public static List<HomeVerModel> cartItems = new ArrayList<>();
     private BottomSheetDialog bottomSheetDialog;
     Context context;
     ArrayList<HomeVerModel> list;
@@ -37,12 +38,11 @@ public class HomeVerAdapter extends RecyclerView.Adapter<HomeVerAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
         final String mName = list.get(position).getName();
-        final String mTiming = list.get(position).getTiming(); final String mRating = list.get(position).getRating();
+        final String mTiming = list.get(position).getTiming();
+        final String mRating = list.get(position).getRating();
         final String mPrice = list.get(position).getPrice();
         final int mImage = list.get(position).getImage();
-
 
         holder.imageView.setImageResource(list.get(position).getImage());
         holder.name.setText(list.get(position).getName());
@@ -59,26 +59,30 @@ public class HomeVerAdapter extends RecyclerView.Adapter<HomeVerAdapter.ViewHold
                 sheetView.findViewById(R.id.add_to_cart).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(context, "Added to a Cart", Toast.LENGTH_SHORT).show();
+                        addToCart(list.get(position));
                         bottomSheetDialog.dismiss();
                     }
                 });
+
                 ImageView bottomImg = sheetView.findViewById(R.id.bottom_img);
                 TextView bottomName = sheetView.findViewById(R.id.bottom_name);
                 TextView bottomPrice = sheetView.findViewById(R.id.bottom_price);
                 TextView bottomRating = sheetView.findViewById(R.id.bottom_rating);
-
 
                 bottomName.setText(mName);
                 bottomPrice.setText(mPrice);
                 bottomRating.setText(mRating);
                 bottomImg.setImageResource(mImage);
 
-
                 bottomSheetDialog.setContentView(sheetView);
                 bottomSheetDialog.show();
             }
         });
+    }
+
+    private void addToCart(HomeVerModel item) {
+        cartItems.add(item);
+        Toast.makeText(context, "Added to Cart", Toast.LENGTH_SHORT).show();
     }
 
     @Override
