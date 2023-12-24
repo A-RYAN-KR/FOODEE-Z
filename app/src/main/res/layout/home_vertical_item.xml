@@ -18,7 +18,7 @@
             android:id="@+id/ver_img"
             android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:scaleType="center"
+            android:scaleType="centerCrop"
             android:src="@drawable/copy_of_dinner"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
