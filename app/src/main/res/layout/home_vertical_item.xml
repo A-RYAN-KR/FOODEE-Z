@@ -29,7 +29,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="112dp"
+            android:layout_height="100dp"
             android:background="@drawable/round_bg"
             app:layout_constraintBottom_toBottomOf="@+id/ver_img"
             app:layout_constraintTop_toTopOf="@+id/ver_img"

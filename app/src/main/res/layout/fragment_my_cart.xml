@@ -29,30 +29,18 @@
         app:layout_constraintTop_toBottomOf="@id/mycart_txt"
         app:layout_constraintWidth_percent=".8" />
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/cart_rec"
         android:layout_width="401dp"
-        android:layout_height="465dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_height="502dp"
+        android:layout_margin="15dp"
+        android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@+id/divider_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/divider_top"
         app:layout_constraintVertical_bias="0.0" />
-
-    <!-- Placeholder value; should be dynamically updated --><![CDATA[
-    android:textSize="28sp"
-    android:textStyle="bold"
-    app:layout_constraintBottom_toTopOf="@+id/remove_all_btn"
-    app:layout_constraintStart_toStartOf="parent"
-    android:layout_marginTop="16dp" />
-
-
-
-
-
-    ]]>
 
     <View
         android:id="@+id/divider_bottom"
@@ -76,6 +64,7 @@
         android:text="ORDER"
         android:textSize="16sp"
         android:textStyle="bold"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
