@@ -99,7 +99,7 @@
         android:layout_height="45dp"
         android:layout_marginTop="172dp"
         android:backgroundTint="#CCCCCC"
-        android:drawableLeft="@drawable/baseline_mail_24"
+        android:drawableLeft="@drawable/password"
         android:drawablePadding="13dp"
         android:hint="@string/password"
         android:textColor="#FFFFFF"

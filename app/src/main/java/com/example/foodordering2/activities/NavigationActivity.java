@@ -1,4 +1,4 @@
-package com.example.foodordering2;
+package com.example.foodordering2.activities;
 
 import android.os.Bundle;
 
@@ -7,8 +7,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.foodordering2.R;
 import com.example.foodordering2.databinding.ActivityNavigationBinding;
-import com.example.foodordering2.ui.MyCartFragment;
+import com.example.foodordering2.ui.MyCart.MyCartFragment;
 import com.example.foodordering2.ui.dailymeal.DailyMealFragment;
 import com.example.foodordering2.ui.favourite.FavouriteFragment;
 import com.example.foodordering2.ui.home.HomeFragment;

@@ -9,7 +9,7 @@
     <item
         android:id="@+id/dailyMeal"
         android:title="Daily Meal"
-        android:icon="@drawable/daily_meal_bg"/>
+        android:icon="@drawable/meal"/>
 
     <item
         android:id="@+id/fab"
