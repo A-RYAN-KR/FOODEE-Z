@@ -1,9 +1,13 @@
 package com.example.foodordering2.ui.home;
 
+import static android.content.Intent.getIntent;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -35,6 +39,15 @@ public class HomeFragment extends Fragment implements UpdateVerticalRec {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
+
+
+        Bundle arguments = getArguments();
+        if (arguments != null) {
+            String username = "Hello " + arguments.getString("username");
+
+            TextView homeUsername = root.findViewById(R.id.home_username);
+            homeUsername.setText(username);
+        }
 
         homeHorizontalRec = root.findViewById(R.id.home_hor_rec);
         homeVerticalRec = root.findViewById(R.id.home_ver_rec);

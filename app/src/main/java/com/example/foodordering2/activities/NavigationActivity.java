@@ -45,6 +45,10 @@ public class NavigationActivity extends AppCompatActivity {
     }
 
     private void replaceFragment(Fragment fragment) {
+        Bundle args = new Bundle();
+        args.putString("username", getIntent().getStringExtra("username"));
+        fragment.setArguments(args);
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame_layout, fragment);

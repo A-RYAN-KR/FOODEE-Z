@@ -56,5 +56,29 @@ public class DetailedDailyMealActivity extends AppCompatActivity {
             detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_sweets, "Sweet", "description", "4.4", "40", "10am to 9am"));
             dailyAdapter.notifyDataSetChanged();
         }
+        if (type != null && type.equalsIgnoreCase("lunch")) {
+            imageView.setImageResource(R.drawable.copy_of_sweets);
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s1, "Sweet", "description", "4.4", "40", "10am to 9am"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s2, "Sweet", "description", "4.4", "40", "10am to 9am"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s4, "Sweet", "description", "4.4", "40", "10am to 9am"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_sweets, "Sweet", "description", "4.4", "40", "10am to 9am"));
+            dailyAdapter.notifyDataSetChanged();
+        }
+        if (type != null && type.equalsIgnoreCase("dinner")) {
+            imageView.setImageResource(R.drawable.copy_of_sweets);
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s1, "Sweet", "description", "4.4", "40", "10am to 9am"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s2, "Sweet", "description", "4.4", "40", "10am to 9am"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s4, "Sweet", "description", "4.4", "40", "10am to 9am"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_sweets, "Sweet", "description", "4.4", "40", "10am to 9am"));
+            dailyAdapter.notifyDataSetChanged();
+        }
+        if (type != null && type.equalsIgnoreCase("coffee")) {
+            imageView.setImageResource(R.drawable.copy_of_sweets);
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s1, "Sweet", "description", "4.4", "40", "10am to 9am"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s2, "Sweet", "description", "4.4", "40", "10am to 9am"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s4, "Sweet", "description", "4.4", "40", "10am to 9am"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_sweets, "Sweet", "description", "4.4", "40", "10am to 9am"));
+            dailyAdapter.notifyDataSetChanged();
+        }
     }
 }

@@ -30,11 +30,11 @@ DailyMealAdapter dailyMealAdapter;
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         dailyMealModels = new ArrayList<>();
 
-        dailyMealModels.add(new DailyMealModel(R.drawable.copy_of_breakfast,"Breakfast","30 % OFF","Description Description","breakfast"));
-        dailyMealModels.add(new DailyMealModel(R.drawable.copy_of_lunch,"Lunch","20 % OFF","Description Description","lunch"));
-        dailyMealModels.add(new DailyMealModel(R.drawable.copy_of_dinner,"Dinner","30 % OFF","Description Description","dinner"));
-        dailyMealModels.add(new DailyMealModel(R.drawable.copy_of_sweets,"Sweets","40 % OFF","Description Description","sweets"));
-        dailyMealModels.add(new DailyMealModel(R.drawable.coffe,"Coffee","50 % OFF","Description Description","coffee"));
+        dailyMealModels.add(new DailyMealModel(R.drawable.copy_of_breakfast,"Breakfast","30 % OFF","Morning Fuel","breakfast"));
+        dailyMealModels.add(new DailyMealModel(R.drawable.copy_of_lunch,"Lunch","20 % OFF","Quick Bites","lunch"));
+        dailyMealModels.add(new DailyMealModel(R.drawable.copy_of_dinner,"Dinner","30 % OFF","Hearty Feast","dinner"));
+        dailyMealModels.add(new DailyMealModel(R.drawable.copy_of_sweets,"Sweets","40 % OFF","Sweet Delights","sweets"));
+        dailyMealModels.add(new DailyMealModel(R.drawable.coffe,"Coffee","50 % OFF","Rich Brew","coffee"));
 
         dailyMealAdapter = new DailyMealAdapter(getContext(),dailyMealModels);
         recyclerView.setAdapter(dailyMealAdapter);

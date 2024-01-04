@@ -13,18 +13,22 @@
 
         <EditText
             android:id="@+id/editText"
-            android:layout_width="332dp"
+            android:layout_width="wrap_content"
             android:layout_height="44dp"
             android:background="@drawable/search_bg"
             android:drawablePadding="9dp"
-            android:hint="Search your food!"
-            android:drawableRight="@drawable/twotone_youtube_searched_for_24"
+            android:hint="VIT CANTEEN"
+            android:textStyle="bold"
+            android:drawableLeft="@drawable/location"
             android:padding="10dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="10dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:textSize="13sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
 
         <ImageView
             android:layout_width="40dp"
@@ -34,17 +38,18 @@
             android:src="@drawable/baseline_person_2_24"
             app:layout_constraintBottom_toBottomOf="@+id/editText"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.774"
+            app:layout_constraintHorizontal_bias="0.923"
             app:layout_constraintStart_toEndOf="@+id/editText"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/home_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
-            android:text="Hello User"
+            android:hint="Hello User"
+            android:textColorHint="@color/white"
             android:textSize="35sp"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
@@ -61,7 +66,7 @@
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/home_username"
             app:layout_constraintVertical_bias="0.0" />
 
         <androidx.recyclerview.widget.RecyclerView

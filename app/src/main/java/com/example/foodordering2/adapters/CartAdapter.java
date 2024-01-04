@@ -18,9 +18,11 @@ import java.util.List;
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
     List<CartModel> list;
+    private double totalCartPrice; // Add this variable
 
-    public CartAdapter(List<CartModel> list) {
+    public CartAdapter(List<CartModel> list, double totalCartPrice) {
         this.list = list;
+        this.totalCartPrice = totalCartPrice;
     }
 
     @NonNull
@@ -75,4 +77,17 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
             removeButton = itemView.findViewById(R.id.remove_item_btn); // Initialize the Button reference
         }
     }
+    public void updateTotalPrice() {
+        this.totalCartPrice = calculateTotalPrice();
+    }
+    private double calculateTotalPrice() {
+        double totalPrice = 0;
+        for (CartModel cartItem : list) {
+            // Assuming price is stored as a string, convert it to double
+            double itemPrice = Double.parseDouble(cartItem.getPrice());
+            totalPrice += itemPrice;
+        }
+        return totalPrice;
+    }
 }
+

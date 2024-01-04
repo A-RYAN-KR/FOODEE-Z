@@ -45,10 +45,10 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
 
         if (check) {
             ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza1, "Aloo Paratha", "10:00 - 23:00", "4.9", "Min - $35"));
-            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza2, "Paneer Paratha", "10:00 - 23:00", "4.9", "Min - $35"));
-            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza3, "Palak Paratha", "10:00 - 23:00", "4.9", "Min - $35"));
-            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza4, "Rava Paratha", "10:00 - 23:00", "4.9", "Min - $35"));
+            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza1, "Aloo Paratha", "10:00 - 23:00", "4.9", "35"));
+            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza2, "Paneer Paratha", "10:00 - 23:00", "4.9", "35"));
+            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza3, "Palak Paratha", "10:00 - 23:00", "4.9", "35"));
+            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza4, "Rava Paratha", "10:00 - 23:00", "4.9", "35"));
             updateVerticalRec.callBack(position, homeVerModels);
             check = false;
         }
@@ -61,36 +61,36 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
 
                 if (position == 0) {
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza1, "Aloo Paratha", "10:00 - 23:00", "4.9", "Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza2, "Paneer Paratha", "10:00 - 23:00", "4.9", "Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza3, "Palak Paratha", "10:00 - 23:00", "4.9", "Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza4, "Rava Paratha", "10:00 - 23:00", "4.9", "Min - $35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza1, "Aloo Paratha", "10:00 - 23:00", "4.9", "35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza2, "Paneer Paratha", "10:00 - 23:00", "4.9", "35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza3, "Palak Paratha", "10:00 - 23:00", "4.9", "35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza4, "Rava Paratha", "10:00 - 23:00", "4.9", "35"));
                     updateVerticalRec.callBack(position, homeVerModels);
                 } else if (position == 1) {
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger1, "Burger 1", "10:00 - 23:00", "4.9", "Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger2, "Burger 2", "10:00 - 23:00", "4.9", "Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger4, "Burger 3", "10:00 - 23:00", "4.9", "Min - $35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger1, "Burger 1", "10:00 - 23:00", "4.9", "35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger2, "Burger 2", "10:00 - 23:00", "4.9", "35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger4, "Burger 3", "10:00 - 23:00", "4.9", "35"));
                     updateVerticalRec.callBack(position, homeVerModels);
                 } else if (position == 2) {
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries1, "Fries 1", "10:00 - 23:00", "4.9", "Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries2, "Fries 2", "10:00 - 23:00", "4.9", "Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries3, "Fries 3", "10:00 - 23:00", "4.9", "Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries4, "Fries 4", "10:00 - 23:00", "4.9", "Min - $35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries1, "Fries 1", "10:00 - 23:00", "4.9", "35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries2, "Fries 2", "10:00 - 23:00", "4.9", "35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries3, "Fries 3", "10:00 - 23:00", "4.9", "35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries4, "Fries 4", "10:00 - 23:00", "4.9", "35"));
                     updateVerticalRec.callBack(position, homeVerModels);
                 } else if (position == 3) {
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_icecream1, "Ice-cream 1", "10:00 - 23:00", "4.9", "Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_icecream3, "Ice-cream 2", "10:00 - 23:00", "4.9", "Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_icecream4, "Ice-cream 3", "10:00 - 23:00", "4.9", "Min - $35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_icecream1, "Ice-cream 1", "10:00 - 23:00", "4.9", "35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_icecream3, "Ice-cream 2", "10:00 - 23:00", "4.9", "35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_icecream4, "Ice-cream 3", "10:00 - 23:00", "4.9", "35"));
                     updateVerticalRec.callBack(position, homeVerModels);
                 } else if (position == 4) {
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwich1, "Sandwich 1", "10:00 - 23:00", "4.9", "Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwich2, "Sandwich 2", "10:00 - 23:00", "4.9", "Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwich3, "Sandwich 3", "10:00 - 23:00", "4.9", "Min - $35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwich4, "Sandwich 4", "10:00 - 23:00", "4.9", "Min - $35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwich1, "Sandwich 1", "10:00 - 23:00", "4.9", "35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwich2, "Sandwich 2", "10:00 - 23:00", "4.9", "35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwich3, "Sandwich 3", "10:00 - 23:00", "4.9", "35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwich4, "Sandwich 4", "10:00 - 23:00", "4.9", "35"));
                     updateVerticalRec.callBack(position, homeVerModels);
                 }
             }

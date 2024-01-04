@@ -1,5 +1,6 @@
 package com.example.foodordering2.adapters;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,16 +13,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodordering2.R;
+import com.example.foodordering2.activities.CartManager;
 import com.example.foodordering2.models.DetailedDailyModel;
+import com.example.foodordering2.models.HomeVerModel;
 
 import java.util.List;
 
-public class DetailedDailyAdapter extends RecyclerView.Adapter<DetailedDailyAdapter.ViewHolder> {
+public class DetailedDailyAdapter<T> extends RecyclerView.Adapter<DetailedDailyAdapter.ViewHolder> {
 
-    private List<DetailedDailyModel> list;
-    private List<DetailedDailyModel> cartItems; // To store items added to cart
+    private List<T> list;
+    private List<T> cartItems; // To store items added to cart
 
-    public DetailedDailyAdapter(List<DetailedDailyModel> list, List<DetailedDailyModel> cartItems) {
+    public DetailedDailyAdapter(List<T> list, List<T> cartItems) {
         this.list = list;
         this.cartItems = cartItems;
     }
@@ -34,14 +37,14 @@ public class DetailedDailyAdapter extends RecyclerView.Adapter<DetailedDailyAdap
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        DetailedDailyModel currentItem = list.get(position);
+        T currentItem = list.get(position);
 
-        holder.imageView.setImageResource(currentItem.getImage());
-        holder.price.setText(currentItem.getPrice());
-        holder.name.setText(currentItem.getName());
-        holder.description.setText(currentItem.getDescription());
-        holder.timing.setText(currentItem.getTiming());
-        holder.rating.setText(currentItem.getRating());
+        holder.imageView.setImageResource(((DetailedDailyModel) currentItem).getImage());
+        holder.price.setText(((DetailedDailyModel) currentItem).getPrice());
+        holder.name.setText(((DetailedDailyModel) currentItem).getName());
+        holder.description.setText(((DetailedDailyModel) currentItem).getDescription());
+        holder.timing.setText(((DetailedDailyModel) currentItem).getTiming());
+        holder.rating.setText(((DetailedDailyModel) currentItem).getRating());
 
         // Add to Cart button click listener
         holder.addToCartButton.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +52,11 @@ public class DetailedDailyAdapter extends RecyclerView.Adapter<DetailedDailyAdap
             public void onClick(View v) {
                 cartItems.add(currentItem); // Add item to cart
                 Toast.makeText(v.getContext(), "Added to Cart", Toast.LENGTH_SHORT).show();
-                cartItems.add(list.get(position));
+                CartManager.getInstance().addToCart(currentItem);
+
+                // Notify the adapter about the change in data
+                notifyDataSetChanged();
+
             }
         });
     }
@@ -57,6 +64,11 @@ public class DetailedDailyAdapter extends RecyclerView.Adapter<DetailedDailyAdap
     @Override
     public int getItemCount() {
         return list.size();
+    }
+
+    private void addToCart(T item, Context context) {
+        CartManager.getInstance().addToCart(item);
+        Toast.makeText(context, "Added to Cart", Toast.LENGTH_SHORT).show();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

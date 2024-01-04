@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import com.example.foodordering2.R;
 import com.example.foodordering2.adapters.FeaturedAdapter;
 import com.example.foodordering2.adapters.FeaturedVerAdapter;
+import com.example.foodordering2.adapters.HomeHorAdapter;
 import com.example.foodordering2.models.FeaturedModel;
 import com.example.foodordering2.models.FeaturedVerModel;
 
@@ -54,6 +55,7 @@ public class FirstFragment extends Fragment {
 
         featuredAdapter = new FeaturedAdapter(featuredModelList);
         recyclerView.setAdapter(featuredAdapter);
+
 
         ///////////////////////////////Featured Ver RecyclerView
 

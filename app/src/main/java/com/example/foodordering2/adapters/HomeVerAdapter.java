@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodordering2.R;
+import com.example.foodordering2.activities.CartManager;
 import com.example.foodordering2.models.HomeVerModel;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
@@ -81,7 +82,7 @@ public class HomeVerAdapter extends RecyclerView.Adapter<HomeVerAdapter.ViewHold
     }
 
     private void addToCart(HomeVerModel item) {
-        cartItems.add(item);
+        CartManager.getInstance().addToCart(item);
         Toast.makeText(context, "Added to Cart", Toast.LENGTH_SHORT).show();
     }
 
