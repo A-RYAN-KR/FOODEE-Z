@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class MyCartFragment extends Fragment {
+public class MyCartFragment extends Fragment implements CartAdapter.CartAdapterListener {
 
     RecyclerView recyclerView;
     CartAdapter cartAdapter;
@@ -65,8 +65,9 @@ public class MyCartFragment extends Fragment {
         }
 
             // Set up the CartAdapter
-            cartAdapter = new CartAdapter(cartModels , calculateTotalPrice());
-            recyclerView.setAdapter(cartAdapter);
+        cartAdapter = new CartAdapter(getContext(), cartModels, calculateTotalPrice());
+        cartAdapter.setListener(this);
+        recyclerView.setAdapter(cartAdapter);
 
             totalPriceTextView = view.findViewById(R.id.total_price);
 
@@ -98,11 +99,12 @@ public class MyCartFragment extends Fragment {
             return view;
         }
     // Add this method to update the total price
-    private void updateTotalPrice() {
+    public void updateTotalPrice() {
         double totalPrice = calculateTotalPrice();
         String formattedTotalPrice = String.format(Locale.getDefault(), "Total: %.2f", totalPrice);
         totalPriceTextView.setText(formattedTotalPrice);
     }
+
 
     // Add this method to calculate the total price
     private double calculateTotalPrice() {

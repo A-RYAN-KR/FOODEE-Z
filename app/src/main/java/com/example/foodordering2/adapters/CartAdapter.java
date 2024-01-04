@@ -1,5 +1,6 @@
 package com.example.foodordering2.adapters;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,18 +13,26 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodordering2.R;
 import com.example.foodordering2.models.CartModel;
+import com.example.foodordering2.ui.MyCart.MyCartFragment;
 
 import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
     List<CartModel> list;
+    private Context context; // Add this variable
     private double totalCartPrice; // Add this variable
 
-    public CartAdapter(List<CartModel> list, double totalCartPrice) {
+    public CartAdapter(Context context, List<CartModel> list, double totalCartPrice) {
+        this.context = context;
         this.list = list;
         this.totalCartPrice = totalCartPrice;
     }
+
+    public void updateTotalPrice(double totalCartPrice) {
+        this.totalCartPrice = totalCartPrice;
+    }
+
 
     @NonNull
     @Override
@@ -44,9 +53,17 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         holder.removeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                list.remove(position); // Remove item from the list
-                notifyItemRemoved(position); // Notify adapter about the removal
-                notifyItemRangeChanged(position, list.size()); // Refresh the items
+                int removedPosition = holder.getAdapterPosition();
+                list.remove(removedPosition); // Remove item from the list
+                notifyItemRemoved(removedPosition); // Notify adapter about the removal
+                notifyItemRangeChanged(removedPosition, list.size()); // Refresh the items
+
+                double newTotalPrice = calculateTotalPrice();
+                updateTotalPrice(newTotalPrice); // Update the total price
+                // Notify the fragment to update the total price display
+                if (listener != null) {
+                    listener.updateTotalPrice();
+                }
             }
         });
     }
@@ -89,5 +106,14 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         }
         return totalPrice;
     }
+    public interface CartAdapterListener {
+        void updateTotalPrice();
+    }
+    private CartAdapterListener listener;
+
+    public void setListener(CartAdapterListener listener) {
+        this.listener = listener;
+    }
+
 }
 
