@@ -22,13 +22,6 @@
             app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
             app:title="Daily Meals">
 
-            <ImageView
-                android:id="@+id/detailed_img"
-                android:layout_width="match_parent"
-                android:layout_height="240dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/breakfast"/>
-
 
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
@@ -73,5 +66,14 @@
         app:layout_anchor="@id/appBar"
         android:layout_marginRight="20dp"
         android:clickable="true"/>
+
+    <ImageView
+        android:id="@+id/detailed_img"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/breakfast"
+        app:layout_anchor="@+id/appBar"
+        app:layout_anchorGravity="center" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -61,36 +61,72 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
 
                 if (position == 0) {
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza1, "Aloo Paratha", "10:00 - 23:00", "4.9", "35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza2, "Paneer Paratha", "10:00 - 23:00", "4.9", "35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza3, "Palak Paratha", "10:00 - 23:00", "4.9", "35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza4, "Rava Paratha", "10:00 - 23:00", "4.9", "35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza1, "Aloo Paratha", "10:00 - 23:00", "4.9", "50"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza2, "Paneer Paratha", "10:00 - 23:00", "4.9", "70"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza3, "Palak Paratha", "10:00 - 23:00", "4.9", "55"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza4, "Rava Paratha", "10:00 - 23:00", "4.9", "60"));
                     updateVerticalRec.callBack(position, homeVerModels);
                 } else if (position == 1) {
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger1, "Burger 1", "10:00 - 23:00", "4.9", "35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger2, "Burger 2", "10:00 - 23:00", "4.9", "35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger4, "Burger 3", "10:00 - 23:00", "4.9", "35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger1, "Vada Pav", "10:00 - 23:00", "4.9", "18"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger2, "Sabudana Vada", "10:00 - 23:00", "4.9", "25"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger3, "Poha", "10:00 - 23:00", "4.9", "25"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger4, "Shev Pav", "10:00 - 23:00", "4.9", "25"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger5, "Samosa", "10:00 - 23:00", "4.9", "17"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger6, "Patties", "10:00 - 23:00", "4.9", "22"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger7, "Idli", "10:00 - 23:00", "4.9", "35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger8, "Dhokla", "10:00 - 23:00", "4.9", "35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_burger9, "Pulav", "10:00 - 23:00", "4.9", "60"));
                     updateVerticalRec.callBack(position, homeVerModels);
                 } else if (position == 2) {
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries1, "Fries 1", "10:00 - 23:00", "4.9", "35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries2, "Fries 2", "10:00 - 23:00", "4.9", "35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries3, "Fries 3", "10:00 - 23:00", "4.9", "35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries4, "Fries 4", "10:00 - 23:00", "4.9", "35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries1, "Banana Shake", "10:00 - 23:00", "4.9", "35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries2, "Chiku Shake", "10:00 - 23:00", "4.9", "40"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries3, "Stawberry Shake", "10:00 - 23:00", "4.9", "40"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries4, "Papaya Shake", "10:00 - 23:00", "4.9", "40"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries5, "Musk Melon Shake", "10:00 - 23:00", "4.9", "40"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries6, "Rose Shake", "10:00 - 23:00", "4.9", "40"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries7, "Anjeer Shake", "10:00 - 23:00", "4.9", "40"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries8, "Butter Scotch Shake", "10:00 - 23:00", "4.9", "40"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries9, "Bournvita Shake", "10:00 - 23:00", "4.9", "45"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries10, "Oreo Shake", "10:00 - 23:00", "4.9", "45"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries11, "Gajar Shake", "10:00 - 23:00", "4.9", "40"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries12, "Cold Coffee", "10:00 - 23:00", "4.9", "40"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries13, "Mango Shake", "10:00 - 23:00", "4.9", "50"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries14, "Pineapple Shake", "10:00 - 23:00", "4.9", "45"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries15, "Chocolate Shake", "10:00 - 23:00", "4.9", "50"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries16, "Khajoor Shake", "10:00 - 23:00", "4.9", "50"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries17, "Apple Shake", "10:00 - 23:00", "4.9", "50"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries18, "Dragon Fruit", "10:00 - 23:00", "4.9", "50"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries19, "Kiwi Shake", "10:00 - 23:00", "4.9", "60"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries20, "Sitafal Shake", "10:00 - 23:00", "4.9", "70"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries21, "Pista Shake", "10:00 - 23:00", "4.9", "60"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries22, "Badam Shake", "10:00 - 23:00", "4.9", "60"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries23, "Keasar Shake", "10:00 - 23:00", "4.9", "60"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries24, "Mix Fruit Shake", "10:00 - 23:00", "4.9", "60"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries25, "Sitafal Rabdi", "10:00 - 23:00", "4.9", "90"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries26, "Stawberry Rabdi", "10:00 - 23:00", "4.9", "60"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries27, "Pineapple Rabdi", "10:00 - 23:00", "4.9", "60"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries28, "Chiku Rabdi", "10:00 - 23:00", "4.9", "55"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries29, "Mix Rabdi", "10:00 - 23:00", "4.9", "60"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries30, "Dragon Fruit", "10:00 - 23:00", "4.9", "60"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries31, "Kiwi Rabdi", "10:00 - 23:00", "4.9", "70"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_fries32, "Apple Rabdi", "10:00 - 23:00", "4.9", "60"));
+
                     updateVerticalRec.callBack(position, homeVerModels);
                 } else if (position == 3) {
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_icecream1, "Ice-cream 1", "10:00 - 23:00", "4.9", "35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_icecream3, "Ice-cream 2", "10:00 - 23:00", "4.9", "35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_icecream4, "Ice-cream 3", "10:00 - 23:00", "4.9", "35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_image1, "Tea", "10:00 - 23:00", "4.9", "15"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_image2, "Coffee", "10:00 - 23:00", "4.9", "20"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_image3, "Hot Coffee", "10:00 - 23:00", "4.9", "15"));
                     updateVerticalRec.callBack(position, homeVerModels);
                 } else if (position == 4) {
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwich1, "Sandwich 1", "10:00 - 23:00", "4.9", "35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwich2, "Sandwich 2", "10:00 - 23:00", "4.9", "35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwich3, "Sandwich 3", "10:00 - 23:00", "4.9", "35"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwich4, "Sandwich 4", "10:00 - 23:00", "4.9", "35"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwitch1, "Veg Grilled", "10:00 - 23:00", "4.9", "55"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwitch2, "Chocolate", "10:00 - 23:00", "4.9", "55"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwitch3, "Aalu grilled", "10:00 - 23:00", "4.9", "50"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwitch4, "Paneer Grilled", "10:00 - 23:00", "4.9", "60"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwitch5, "Veg Plain", "10:00 - 23:00", "4.9", "40"));
                     updateVerticalRec.callBack(position, homeVerModels);
                 }
             }
