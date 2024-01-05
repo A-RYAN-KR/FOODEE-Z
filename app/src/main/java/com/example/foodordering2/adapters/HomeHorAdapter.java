@@ -116,17 +116,17 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
                     updateVerticalRec.callBack(position, homeVerModels);
                 } else if (position == 3) {
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_image1, "Tea", "10:00 - 23:00", "4.9", "15"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_image2, "Coffee", "10:00 - 23:00", "4.9", "20"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_image3, "Hot Coffee", "10:00 - 23:00", "4.9", "15"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_image1, "Tea", "10:00 - 18:00", "4.9", "15"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_image2, "Coffee", "10:00 - 18:00", "4.9", "20"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_image3, "Hot Coffee", "10:00 - 18:00", "4.9", "15"));
                     updateVerticalRec.callBack(position, homeVerModels);
                 } else if (position == 4) {
                     ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwitch1, "Veg Grilled", "10:00 - 23:00", "4.9", "55"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwitch2, "Chocolate", "10:00 - 23:00", "4.9", "55"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwitch3, "Aalu grilled", "10:00 - 23:00", "4.9", "50"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwitch4, "Paneer Grilled", "10:00 - 23:00", "4.9", "60"));
-                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwitch5, "Veg Plain", "10:00 - 23:00", "4.9", "40"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwitch1, "Veg Grilled", "10:00 - 18:00", "4.9", "55"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwitch2, "Chocolate", "10:00 - 18:00", "4.9", "55"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwitch3, "Aalu grilled", "10:00 - 18:00", "4.9", "50"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwitch4, "Paneer Grilled", "10:00 - 18:00", "4.9", "60"));
+                    homeVerModels.add(new HomeVerModel(R.drawable.copy_of_sandwitch5, "Veg Plain", "10:00 - 18:00", "4.9", "40"));
                     updateVerticalRec.callBack(position, homeVerModels);
                 }
             }
