@@ -45,10 +45,10 @@ public class HomeHorAdapter extends RecyclerView.Adapter<HomeHorAdapter.ViewHold
 
         if (check) {
             ArrayList<HomeVerModel> homeVerModels = new ArrayList<>();
-            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza1, "Aloo Paratha", "10:00 - 23:00", "4.9", "35"));
-            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza2, "Paneer Paratha", "10:00 - 23:00", "4.9", "35"));
-            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza3, "Palak Paratha", "10:00 - 23:00", "4.9", "35"));
-            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza4, "Rava Paratha", "10:00 - 23:00", "4.9", "35"));
+            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza1, "Aloo Paratha", "10:00 - 23:00", "4.9", "50"));
+            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza2, "Paneer Paratha", "10:00 - 23:00", "4.9", "70"));
+            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza3, "Palak Paratha", "10:00 - 23:00", "4.9", "55"));
+            homeVerModels.add(new HomeVerModel(R.drawable.copy_of_pizza4, "Rava Paratha", "10:00 - 23:00", "4.9", "60"));
             updateVerticalRec.callBack(position, homeVerModels);
             check = false;
         }
