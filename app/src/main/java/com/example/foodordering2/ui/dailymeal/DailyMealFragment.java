@@ -32,7 +32,6 @@ DailyMealAdapter dailyMealAdapter;
 
         dailyMealModels.add(new DailyMealModel(R.drawable.copy_of_breakfast,"Breakfast","30 % OFF","Morning Fuel","breakfast"));
         dailyMealModels.add(new DailyMealModel(R.drawable.copy_of_lunch,"Lunch","20 % OFF","Quick Bites","lunch"));
-        dailyMealModels.add(new DailyMealModel(R.drawable.copy_of_dinner,"Dinner","30 % OFF","Hearty Feast","dinner"));
         dailyMealModels.add(new DailyMealModel(R.drawable.copy_of_sweets,"Sweets","40 % OFF","Sweet Delights","sweets"));
         dailyMealModels.add(new DailyMealModel(R.drawable.coffe,"Coffee","50 % OFF","Rich Brew","coffee"));
 
