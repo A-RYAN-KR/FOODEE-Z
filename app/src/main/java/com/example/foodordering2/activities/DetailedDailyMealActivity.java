@@ -42,42 +42,35 @@ public class DetailedDailyMealActivity extends AppCompatActivity {
         recyclerView.setAdapter(dailyAdapter);
 
         if (type != null && type.equalsIgnoreCase("breakfast")) {
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_fav1, "Breakfast", "description", "4.4", "40", "10 to 9"));
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_fav2, "Breakfast", "description", "4.4", "40", "10 to 9"));
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_fav3, "Breakfast", "description", "4.4", "40", "10 to 9"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_burger3, "Poha", "", "4.4", "25", "10am to 6pm"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_burger7, "Idli", "", "4.4", "35", "10am to 6pm"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_burger8, "Dhokla", "", "4.4", "35", "10am to 6pm"));
             dailyAdapter.notifyDataSetChanged();
         }
 
         if (type != null && type.equalsIgnoreCase("sweets")) {
             imageView.setImageResource(R.drawable.copy_of_sweets);
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s1, "Sweet", "description", "4.4", "40", "10am to 9am"));
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s2, "Sweet", "description", "4.4", "40", "10am to 9am"));
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s4, "Sweet", "description", "4.4", "40", "10am to 9am"));
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_sweets, "Sweet", "description", "4.4", "40", "10am to 9am"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_fries8, "Butter Scotch Shake", "", "4.4", "40", "10am to 6pm"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_fries15, "Chocolate Shake", "", "4.4", "50", "10am to 6pm"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_fries29, "Mix Rabdi", "", "4.4", "60", "10am to 6pm"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_fries21, "Pista Shake", "", "4.4", "60", "10am to 6pm"));
             dailyAdapter.notifyDataSetChanged();
         }
         if (type != null && type.equalsIgnoreCase("lunch")) {
-            imageView.setImageResource(R.drawable.copy_of_sweets);
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s1, "Sweet", "description", "4.4", "40", "10am to 9am"));
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s2, "Sweet", "description", "4.4", "40", "10am to 9am"));
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s4, "Sweet", "description", "4.4", "40", "10am to 9am"));
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_sweets, "Sweet", "description", "4.4", "40", "10am to 9am"));
+            imageView.setImageResource(R.drawable.copy_of_lunch);
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_burger9, "Pulav", "", "4.4", "60", "10am to 6pm"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_pizza1, "Aloo Paratha", "", "4.4", "50", "10am to 6pm"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_sandwitch1, "Veg Grilled Sandwich", "", "4.4", "55", "10am to 6pm"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_pizza2, "Paneer Paratha", "", "4.4", "70", "10am to 6pm"));
             dailyAdapter.notifyDataSetChanged();
         }
-        if (type != null && type.equalsIgnoreCase("dinner")) {
-            imageView.setImageResource(R.drawable.copy_of_sweets);
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s1, "Sweet", "description", "4.4", "40", "10am to 9am"));
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s2, "Sweet", "description", "4.4", "40", "10am to 9am"));
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s4, "Sweet", "description", "4.4", "40", "10am to 9am"));
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_sweets, "Sweet", "description", "4.4", "40", "10am to 9am"));
-            dailyAdapter.notifyDataSetChanged();
-        }
+
         if (type != null && type.equalsIgnoreCase("coffee")) {
-            imageView.setImageResource(R.drawable.copy_of_sweets);
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s1, "Sweet", "description", "4.4", "40", "10am to 9am"));
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s2, "Sweet", "description", "4.4", "40", "10am to 9am"));
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_s4, "Sweet", "description", "4.4", "40", "10am to 9am"));
-            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_sweets, "Sweet", "description", "4.4", "40", "10am to 9am"));
+            imageView.setImageResource(R.drawable.copy_of_coffe);
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_image1, "Tea", "", "4.4", "15", "10am to 6pm"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_image2, "Coffee", "", "4.4", "20", "10am to 6pm"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_fries12, "Cold Coffee", "", "4.4", "40", "10am to 6pm"));
+            detailedDailyModelList.add(new DetailedDailyModel(R.drawable.copy_of_image3, "Hot Coffee", "", "4.4", "15", "10am to 6pm"));
             dailyAdapter.notifyDataSetChanged();
         }
     }

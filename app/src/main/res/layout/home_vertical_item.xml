@@ -60,8 +60,8 @@
 
             <TextView
                 android:id="@+id/name"
-                android:layout_width="135dp"
-                android:layout_height="30dp"
+                android:layout_width="221dp"
+                android:layout_height="23dp"
                 android:text="Product Name"
                 android:textColor="@color/white"
                 android:textSize="18sp"
