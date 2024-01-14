@@ -48,6 +48,8 @@ dependencies {
 
     implementation("com.makeramen:roundedimageview:2.3.0")
 
+    implementation("com.saadahmedev.popup-dialog:popup-dialog:1.0.5")
+
 
 
     }

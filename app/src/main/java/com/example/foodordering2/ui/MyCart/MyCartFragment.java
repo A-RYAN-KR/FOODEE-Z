@@ -3,8 +3,10 @@ package com.example.foodordering2.ui.MyCart;
 
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +24,9 @@ import com.example.foodordering2.adapters.CartAdapter;
 import com.example.foodordering2.models.CartModel;
 import com.example.foodordering2.models.DetailedDailyModel;
 import com.example.foodordering2.models.HomeVerModel;
+import com.saadahmedsoft.popupdialog.PopupDialog;
+import com.saadahmedsoft.popupdialog.Styles;
+import com.saadahmedsoft.popupdialog.listener.OnDialogButtonClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,6 +55,7 @@ public class MyCartFragment extends Fragment implements CartAdapter.CartAdapterL
 
         cartModels = new ArrayList<>();
         for (Object item : cartItems) {
+            Log.d("MyCartFragment", "CartItem: " + item.toString());
             if (item instanceof HomeVerModel) {
                 HomeVerModel homeItem = (HomeVerModel) item;
                 cartModels.add(new CartModel(homeItem.getImage(), homeItem.getName(), homeItem.getPrice(), homeItem.getRating()));
@@ -64,40 +70,46 @@ public class MyCartFragment extends Fragment implements CartAdapter.CartAdapterL
             }
         }
 
-            // Set up the CartAdapter
+        // Set up the CartAdapter
         cartAdapter = new CartAdapter(getContext(), cartModels, calculateTotalPrice());
         cartAdapter.setListener(this);
         recyclerView.setAdapter(cartAdapter);
 
-            totalPriceTextView = view.findViewById(R.id.total_price);
+        totalPriceTextView = view.findViewById(R.id.total_price);
 
-            orderBtn = view.findViewById(R.id.order_btn);
-            orderBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    new AlertDialog.Builder(getContext())
-                            .setIcon(R.drawable.baseline_add_alert_24)
-                            .setTitle("Order Confirmation")
-                            .setMessage("Are you sure you want to confirm the order ?")
-                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    Toast.makeText(getContext(), "Order Confirmed", Toast.LENGTH_SHORT).show();
-                                }
-                            })
-                            .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    Toast.makeText(getContext(), "Order Not Confirmed", Toast.LENGTH_SHORT).show();
-                                }
-                            }).show();
-                }
-            });
+        orderBtn = view.findViewById(R.id.order_btn);
+        orderBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(getContext())
+                        .setIcon(R.drawable.baseline_add_alert_24)
+                        .setTitle("Order Confirmation")
+                        .setMessage("Are you sure you want to confirm the order ?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //Toast.makeText(getContext(), "Order Confirmed", Toast.LENGTH_SHORT).show();
+                                PopupDialog.getInstance(getContext())
+                                        .setStyle(Styles.SUCCESS)
+                                        .setHeading("Well Done")
+                                        .setDescription("Order Confirmed")
+                                        .setCancelable(false)
+                                        .showDialog(new OnDialogButtonClickListener() {
+                                            @Override
+                                            public void onDismissClicked(Dialog dialog) {
+                                                super.onDismissClicked(dialog);
+                                            }
+                                        });
+                            }
+                        })
+                        .setNegativeButton("No", (dialog, which) -> Toast.makeText(getContext(), "Order Not Confirmed", Toast.LENGTH_SHORT).show()).show();
+            }
+        });
 
-            updateTotalPrice(); // Call this method to update the total price initially
+        updateTotalPrice(); // Call this method to update the total price initially
 
-            return view;
-        }
+        return view;
+    }
     // Add this method to update the total price
     public void updateTotalPrice() {
         double totalPrice = calculateTotalPrice();
@@ -116,4 +128,4 @@ public class MyCartFragment extends Fragment implements CartAdapter.CartAdapterL
         }
         return totalPrice;
     }
-    }
+}
