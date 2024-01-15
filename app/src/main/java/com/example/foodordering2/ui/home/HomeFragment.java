@@ -19,13 +19,8 @@ import com.example.foodordering2.adapters.HomeVerAdapter;
 import com.example.foodordering2.adapters.UpdateVerticalRec;
 import com.example.foodordering2.models.HomeHorModel;
 import com.example.foodordering2.models.HomeVerModel;
-import com.saadahmedsoft.popupdialog.PopupDialog;
-import com.saadahmedsoft.popupdialog.Styles;
-import com.saadahmedsoft.popupdialog.listener.OnDialogButtonClickListener;
 
 import java.util.ArrayList;
-
-
 
 
 
@@ -33,10 +28,10 @@ public class HomeFragment extends Fragment implements UpdateVerticalRec {
 
     String Name;
     String Email;
-    String pet;
-
+    TextView homeName;
+    TextView emailHome;
+    TextView fullName;
     String Username;
-
     RecyclerView homeHorizontalRec, homeVerticalRec;
     ArrayList<HomeHorModel> homeHorModelList;
     HomeHorAdapter homeHorAdapter;
@@ -52,12 +47,11 @@ public class HomeFragment extends Fragment implements UpdateVerticalRec {
 
         Bundle arguments = getArguments();
         if (arguments != null) {
-            Name = "Name :  " + arguments.getString("name");
-            Email = "Email : " + arguments.getString("email");
-            pet =  "UserName : " + arguments.getString("username");
-            Username = "Hello " + arguments.getString("username");
+            Name = arguments.getString("name");
+            Email = arguments.getString("email");
+            Username = arguments.getString("username");
             TextView homeUsername = root.findViewById(R.id.home_username);
-            homeUsername.setText(Username);
+            homeUsername.setText("Hello " +Username);
 
         }
 
@@ -87,20 +81,17 @@ public class HomeFragment extends Fragment implements UpdateVerticalRec {
         ImageView yourImageView = root.findViewById(R.id.profile);
         yourImageView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                // ImageView click event
-                PopupDialog.getInstance(getContext())
-                        .setStyle(Styles.SUCCESS)
-                        .setHeading("Profile")
-                        .setDescription( "\n\n" + Name + "\n\n" + "" + pet + "\n\n" + "" + Email + "\n" )
-                        .setCancelable(false)
-                        .showDialog(new OnDialogButtonClickListener() {
-                            @Override
-                            public void onDismissClicked(Dialog dialog) {
-                                super.onDismissClicked(dialog);
-                                // Handle dismiss click event if needed
-                            }
-                        });
+            public void onClick(View arg) {
+                // custom dialog
+                Dialog dialog = new Dialog(getContext());
+                dialog.setContentView(R.layout.custom_dialog);
+                homeName = dialog.findViewById(R.id.userName_home);
+                emailHome = dialog.findViewById(R.id.email_home);
+                fullName = dialog.findViewById(R.id.name_home);
+                fullName.setText(Name);
+                homeName.setText(Username);
+                emailHome.setText(Email);
+                dialog.show();
             }
         });
 
@@ -113,4 +104,5 @@ public class HomeFragment extends Fragment implements UpdateVerticalRec {
         homeVerAdapter.notifyDataSetChanged();
         homeVerticalRec.setAdapter(homeVerAdapter);
     }
+
 }
