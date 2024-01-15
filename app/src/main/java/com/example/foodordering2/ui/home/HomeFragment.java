@@ -88,8 +88,8 @@ public class HomeFragment extends Fragment implements UpdateVerticalRec {
                 homeName = dialog.findViewById(R.id.userName_home);
                 emailHome = dialog.findViewById(R.id.email_home);
                 fullName = dialog.findViewById(R.id.name_home);
-                fullName.setText(Name);
-                homeName.setText(Username);
+                fullName.setText(Username);
+                homeName.setText(Name);
                 emailHome.setText(Email);
                 dialog.show();
             }
