@@ -1,14 +1,14 @@
 package com.example.foodordering2.activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.foodordering2.R;
 import com.google.firebase.database.DataSnapshot;
@@ -23,6 +23,11 @@ public class LoginActivity extends AppCompatActivity {
     EditText loginUsername, loginPassword;
     Button loginButton;
     TextView signupRedirectText;
+    String nameFromDB;
+    String emailFromDB;
+    String usernameFromDB;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,9 +102,9 @@ public class LoginActivity extends AppCompatActivity {
                     if (passwordFromDB.equals(userPassword)) {
                         loginUsername.setError(null);
 
-                        String nameFromDB = snapshot.child(userUsername).child("name").getValue(String.class);
-                        String emailFromDB = snapshot.child(userUsername).child("email").getValue(String.class);
-                        String usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
+                        nameFromDB = snapshot.child(userUsername).child("name").getValue(String.class);
+                        emailFromDB = snapshot.child(userUsername).child("email").getValue(String.class);
+                        usernameFromDB = snapshot.child(userUsername).child("username").getValue(String.class);
 
                         // Clear the EditText views
                         loginUsername.setText("");
@@ -113,6 +118,7 @@ public class LoginActivity extends AppCompatActivity {
                         intent.putExtra("password", passwordFromDB);
 
                         startActivity(intent);
+
                     } else {
                         loginPassword.setError("Invalid Credentials");
                         loginPassword.requestFocus();
