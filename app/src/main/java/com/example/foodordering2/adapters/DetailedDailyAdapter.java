@@ -1,6 +1,8 @@
 package com.example.foodordering2.adapters;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,20 +15,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodordering2.R;
-import com.example.foodordering2.activities.CartManager;
+import com.example.foodordering2.activities.CartDatabaseHelper;
 import com.example.foodordering2.models.DetailedDailyModel;
-import com.example.foodordering2.models.HomeVerModel;
 
-import java.util.List;
+import java.util.ArrayList;
 
-public class DetailedDailyAdapter<T> extends RecyclerView.Adapter<DetailedDailyAdapter.ViewHolder> {
+public class DetailedDailyAdapter extends RecyclerView.Adapter<DetailedDailyAdapter.ViewHolder> {
 
-    private List<T> list;
-    private List<T> cartItems; // To store items added to cart
+    Context context;
+    ArrayList<DetailedDailyModel> list;
+    private CartDatabaseHelper databaseHelper;
 
-    public DetailedDailyAdapter(List<T> list, List<T> cartItems) {
+    public DetailedDailyAdapter(Context context, ArrayList<DetailedDailyModel> list) {
+        this.context = context;
         this.list = list;
-        this.cartItems = cartItems;
+        databaseHelper = new CartDatabaseHelper(context);
     }
 
     @NonNull
@@ -37,26 +40,19 @@ public class DetailedDailyAdapter<T> extends RecyclerView.Adapter<DetailedDailyA
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        T currentItem = list.get(position);
 
-        holder.imageView.setImageResource(((DetailedDailyModel) currentItem).getImage());
-        holder.price.setText(((DetailedDailyModel) currentItem).getPrice());
-        holder.name.setText(((DetailedDailyModel) currentItem).getName());
-        holder.description.setText(((DetailedDailyModel) currentItem).getDescription());
-        holder.timing.setText(((DetailedDailyModel) currentItem).getTiming());
-        holder.rating.setText(((DetailedDailyModel) currentItem).getRating());
+
+        holder.imageView.setImageResource(list.get(position).getImage());
+        holder.name.setText(list.get(position).getName());
+        holder.timing.setText(list.get(position).getTiming());
+        holder.rating.setText(list.get(position).getRating());
+        holder.price.setText(list.get(position).getPrice());
 
         // Add to Cart button click listener
         holder.addToCartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cartItems.add(currentItem); // Add item to cart
-                Toast.makeText(v.getContext(), "Added to Cart", Toast.LENGTH_SHORT).show();
-                CartManager.getInstance().addToCart(currentItem);
-
-                // Notify the adapter about the change in data
-                notifyDataSetChanged();
-
+                addToCart(list.get(position));
             }
         });
     }
@@ -66,8 +62,18 @@ public class DetailedDailyAdapter<T> extends RecyclerView.Adapter<DetailedDailyA
         return list.size();
     }
 
-    private void addToCart(T item, Context context) {
-        CartManager.getInstance().addToCart(item);
+    private void addToCart(DetailedDailyModel item) {
+        // Add the item to the SQLite database
+        SQLiteDatabase db = databaseHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("name", item.getName());
+        values.put("price", item.getPrice());
+        values.put("rating", item.getRating());
+        values.put("image", item.getImage());
+
+        db.insert("cart_items", null, values);
+        db.close();
+
         Toast.makeText(context, "Added to Cart", Toast.LENGTH_SHORT).show();
     }
 

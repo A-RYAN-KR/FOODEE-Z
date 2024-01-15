@@ -1,6 +1,8 @@
 package com.example.foodordering2.adapters;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,23 +14,23 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodordering2.R;
-import com.example.foodordering2.activities.CartManager;
+import com.example.foodordering2.activities.CartDatabaseHelper;
 import com.example.foodordering2.models.HomeVerModel;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class HomeVerAdapter extends RecyclerView.Adapter<HomeVerAdapter.ViewHolder> {
 
-    public static List<HomeVerModel> cartItems = new ArrayList<>();
     private BottomSheetDialog bottomSheetDialog;
     Context context;
     ArrayList<HomeVerModel> list;
+    private CartDatabaseHelper databaseHelper;
 
     public HomeVerAdapter(Context context, ArrayList<HomeVerModel> list) {
         this.context = context;
         this.list = list;
+        databaseHelper = new CartDatabaseHelper(context);
     }
 
     @NonNull
@@ -82,7 +84,17 @@ public class HomeVerAdapter extends RecyclerView.Adapter<HomeVerAdapter.ViewHold
     }
 
     private void addToCart(HomeVerModel item) {
-        CartManager.getInstance().addToCart(item);
+        // Add the item to the SQLite database
+        SQLiteDatabase db = databaseHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("name", item.getName());
+        values.put("price", item.getPrice());
+        values.put("rating", item.getRating());
+        values.put("image", item.getImage());
+
+        db.insert("cart_items", null, values);
+        db.close();
+
         Toast.makeText(context, "Added to Cart", Toast.LENGTH_SHORT).show();
     }
 

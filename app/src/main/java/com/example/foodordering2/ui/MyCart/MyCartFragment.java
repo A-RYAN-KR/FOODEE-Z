@@ -6,7 +6,6 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,16 +18,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodordering2.R;
-import com.example.foodordering2.activities.CartManager;
+import com.example.foodordering2.activities.CartDatabaseHelper;
 import com.example.foodordering2.adapters.CartAdapter;
 import com.example.foodordering2.models.CartModel;
-import com.example.foodordering2.models.DetailedDailyModel;
-import com.example.foodordering2.models.HomeVerModel;
 import com.saadahmedsoft.popupdialog.PopupDialog;
 import com.saadahmedsoft.popupdialog.Styles;
 import com.saadahmedsoft.popupdialog.listener.OnDialogButtonClickListener;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -51,24 +47,9 @@ public class MyCartFragment extends Fragment implements CartAdapter.CartAdapterL
         recyclerView = view.findViewById(R.id.cart_rec);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        List cartItems = CartManager.getInstance().getCartItems(); // Change the type to Object
-
-        cartModels = new ArrayList<>();
-        for (Object item : cartItems) {
-            Log.d("MyCartFragment", "CartItem: " + item.toString());
-            if (item instanceof HomeVerModel) {
-                HomeVerModel homeItem = (HomeVerModel) item;
-                cartModels.add(new CartModel(homeItem.getImage(), homeItem.getName(), homeItem.getPrice(), homeItem.getRating()));
-            } else if (item instanceof DetailedDailyModel) {
-                DetailedDailyModel detailedItem = (DetailedDailyModel) item;
-                cartModels.add(new CartModel(
-                        detailedItem.getImage(),
-                        detailedItem.getName(),
-                        detailedItem.getPrice(),
-                        detailedItem.getRating()
-                ));
-            }
-        }
+        // Retrieve cart items from the database
+        CartDatabaseHelper databaseHelper = new CartDatabaseHelper(getContext());
+        cartModels = databaseHelper.getAllCartItems();
 
         // Set up the CartAdapter
         cartAdapter = new CartAdapter(getContext(), cartModels, calculateTotalPrice());

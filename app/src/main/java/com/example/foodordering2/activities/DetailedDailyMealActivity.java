@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.widget.ImageView;
 
@@ -38,7 +39,7 @@ public class DetailedDailyMealActivity extends AppCompatActivity {
         detailedDailyModelList = new ArrayList<>();
 
         // Modify the adapter instantiation to pass both lists
-        dailyAdapter = new DetailedDailyAdapter(detailedDailyModelList, cartItems);
+        dailyAdapter = new DetailedDailyAdapter((Context) DetailedDailyMealActivity.this, (ArrayList<DetailedDailyModel>) detailedDailyModelList);
         recyclerView.setAdapter(dailyAdapter);
 
         if (type != null && type.equalsIgnoreCase("breakfast")) {

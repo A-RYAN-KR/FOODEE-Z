@@ -5,14 +5,19 @@ public class CartModel {
     String name;
     String price;
     String rating;
+    private int id;
 
-    public CartModel(int image, String name, String price, String rating) {
+    public CartModel(int image, String name, String price, String rating , int id) {
         this.image = image;
         this.name = name;
         this.price = price;
         this.rating = rating;
+        this.id = id ;
     }
 
+    public int getId() {
+        return id;
+    }
 
     public int getImage() {
         return image;

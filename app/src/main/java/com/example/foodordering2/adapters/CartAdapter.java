@@ -1,17 +1,20 @@
 package com.example.foodordering2.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodordering2.R;
+import com.example.foodordering2.activities.CartDatabaseHelper;
 import com.example.foodordering2.models.CartModel;
 import com.example.foodordering2.ui.MyCart.MyCartFragment;
 
@@ -20,15 +23,14 @@ import java.util.List;
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
     List<CartModel> list;
-    private Context context; // Add this variable
-    private double totalCartPrice; // Add this variable
+    private Context context;
+    private double totalCartPrice;
 
     public CartAdapter(Context context, List<CartModel> list, double totalCartPrice) {
         this.context = context;
         this.list = list;
         this.totalCartPrice = totalCartPrice;
     }
-
     public void updateTotalPrice(double totalCartPrice) {
         this.totalCartPrice = totalCartPrice;
     }
@@ -54,16 +56,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
             @Override
             public void onClick(View v) {
                 int removedPosition = holder.getAdapterPosition();
-                list.remove(removedPosition); // Remove item from the list
-                notifyItemRemoved(removedPosition); // Notify adapter about the removal
-                notifyItemRangeChanged(removedPosition, list.size()); // Refresh the items
-
-                double newTotalPrice = calculateTotalPrice();
-                updateTotalPrice(newTotalPrice); // Update the total price
-                // Notify the fragment to update the total price display
-                if (listener != null) {
-                    listener.updateTotalPrice();
-                }
+                removeItemFromDatabase(removedPosition);
             }
         });
     }
@@ -97,6 +90,36 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
     public void updateTotalPrice() {
         this.totalCartPrice = calculateTotalPrice();
     }
+    private void removeItemFromDatabase(int position) {
+        CartModel removedItem = list.get(position);
+
+        // Assuming you have a CartDatabaseHelper class to handle database operations
+        CartDatabaseHelper databaseHelper = new CartDatabaseHelper(context);
+
+        // Implement SQLite database operation to remove the item from the database
+        boolean isRemoved = databaseHelper.removeItem(removedItem.getId()); // Assuming getId() returns the unique identifier
+
+        if (isRemoved) {
+            // If the item is successfully removed from the database, update the UI
+            list.remove(position);
+            notifyItemRemoved(position);
+            notifyItemRangeChanged(position, list.size());
+
+            double newTotalPrice = calculateTotalPrice();
+            updateTotalPrice(newTotalPrice);
+
+            if (listener != null) {
+                listener.updateTotalPrice();
+            }
+        } else {
+            // Handle the case where the item couldn't be removed from the database
+            // You might want to show a toast or log a message
+            // For example:
+             Toast.makeText(context, "Failed to remove item from database", Toast.LENGTH_SHORT).show();
+             Log.e("CartAdapter", "Failed to remove item from database");
+        }
+    }
+
     private double calculateTotalPrice() {
         double totalPrice = 0;
         for (CartModel cartItem : list) {
