@@ -1,8 +1,6 @@
-# FOOD_ORDERING
+# FOODEE-Z
 
-FOODEE-Z
-
-Overview
+# Overview
 
 This research paper explores the development and execution of the Android app FOODEE-Z, dedicated to optimizing meal orders within a campus cafeteria. The app offers a solution to challenges associated with traditional queuing systems, ensuring a more efficient and seamless experience for customers. Consequently, this method enhances the reliability and velocity of client orders.
 
