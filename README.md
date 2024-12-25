@@ -4,8 +4,6 @@
 
 FOODEE-Z is an Android app dedicated to optimizing meal orders within a campus cafeteria. The app offers a solution to challenges associated with traditional queuing systems, ensuring a more efficient and seamless experience for customers. Consequently, this method enhances the reliability and velocity of client orders.
 
-Structured into Admin and Client Panels, users are required to register for an account to access the online food ordering system. The platform provides administrators with complete visibility into customer information, meal menus, and order details, facilitating effective management and responses through an informative admin dashboard.
-
 An innovative aspect of the app is its forward-looking approach, as it allows users to place takeaway orders online. This feature not only enhances the reliability and speed of client orders but also contributes to improved space utilization within the cafeteria. By minimizing unnecessary rush and waiting times, FOODEE-Z benefits both customers and cafeteria administrators.
 
 ## Objective
