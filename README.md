@@ -12,9 +12,9 @@ An innovative aspect of the app is its forward-looking approach, as it allows us
 
 FOODEE-Z aims to benefit canteen owners by:
 
-Enabling them to upload menus, which leads to higher customer acquisition and retention rates.
+* Enabling them to upload menus, which leads to higher customer acquisition and retention rates.
 
-Providing better and quicker service.
+* Providing better and quicker service.
 
 The app’s primary motivation is to help students and employees easily get their food ready on time, avoid omission of meals, and thereby maintain their health.
 
@@ -22,41 +22,27 @@ The app’s primary motivation is to help students and employees easily get thei
 
 ### Client Panel
 
-User Registration: Users create an account by providing their name, email address (or phone number), and setting up a password.
+* User Registration: Users create an account by providing their name, email address (or phone number), and setting up a password.
 
-Login and Authentication: Users log in using their registered credentials. The app verifies the entered information against the database to ensure secure access.
+* Login and Authentication: Users log in using their registered credentials. The app verifies the entered information against the database to ensure secure access.
 
-Order Placement: Customers can browse the menu, select meals, and specify the required quantity.
+* Order Placement: Customers can browse the menu, select meals, and specify the required quantity.
 
-Order Summary: Displays order details, including:
+* Order Summary: Displays order details, including:
 
-Order number
+  * Order number
 
-Customer ID
+  * Customer ID
 
-Name of food items
+  * Name of food items
 
-Price
+  * Price
 
-Quantity
+  * Quantity
 
-Payment Options: After finalizing an order, users proceed to the payment window to choose a payment method and view the total cost.
+* Payment Options: After finalizing an order, users proceed to the payment window to choose a payment method and view the total cost.
 
-Admin Panel
 
-Admin Login: Admins log in using credentials (email ID and password).
-
-Menu Management:
-
-Add new food items.
-
-Update existing food items.
-
-Remove food items.
-
-Order and Customer Management: View detailed information about customer orders and profiles.
-
-Dashboard: Comprehensive view of operational statistics for effective decision-making.
 
 ## Methodology/Experimental
 
@@ -64,35 +50,23 @@ The methodology for using FOODEE-Z involves the following steps:
 
 For Clients
 
-Registration: New users provide their details to create an account.
+1. Registration: New users provide their details to create an account.
 
-Login: Users enter their registered email or phone number and password.
+2. Login: Users enter their registered email or phone number and password.
 
-Order Placement: Clients browse menus, select meals, and confirm orders.
+3. Order Placement: Clients browse menus, select meals, and confirm orders.
 
-Payment: Customers finalize payment through their preferred method.
+4. Payment: Customers finalize payment through their preferred method.
 
-Order Completion: Users receive an order confirmation with all necessary details.
+5. Order Completion: Users receive an order confirmation with all necessary details.
 
-For Admins
 
-Admin Login: Admins access the admin panel with their credentials.
-
-Menu Management:
-
-Add food items to the menu.
-
-Update existing food details.
-
-Remove unavailable items.
-
-Customer and Order Management: Admins manage customer information and track order statuses through the dashboard.
 
 ## Benefits
 
-For Customers: Eliminates long waiting times, improves meal accessibility, and ensures a streamlined food-ordering process.
+* For Customers: Eliminates long waiting times, improves meal accessibility, and ensures a streamlined food-ordering process.
 
-For Administrators: Enhances management efficiency, facilitates data-driven decisions, and optimizes cafeteria space usage.
+* For Administrators: Enhances management efficiency, facilitates data-driven decisions, and optimizes cafeteria space usage.
 
 ## Conclusion
 
